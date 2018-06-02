@@ -11,9 +11,10 @@ To achieve this, open your terminal\shell and navigate to a directory where you 
 
 At this point the graphql-with-tdd folder should only contain a .gitignore file and the .git folder.
 
-$ ls -al
-./
-../
-.git/
-.gitignore
+`$ ls -al`
+`./`
+`../`
+`.git/`
+`.gitignore`
+
 If you don't have this, please ask for help...
