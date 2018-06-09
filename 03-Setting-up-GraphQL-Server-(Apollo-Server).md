@@ -117,7 +117,7 @@ curl --header "Content-Type: application/json" \
   http://localhost:3000/graphql
 ```
 
-### What have I done?
+#### What have I done?
 
 In this section we configured a GraphQL server using Apollo server. 
 GraphQL is typed and it uses a schema with types, that is, things you can query.
