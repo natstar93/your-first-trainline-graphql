@@ -38,63 +38,57 @@ node ./src/server.js
 Open a browser and go to: 
 ```
 http://localhost:3000/status
+```
 
 You should see:
-
+```
 Express status: OK
-To stop the server use
+```
 
-crtl + c
-Making life easier
+## Making life easier
 
-Change the scripts section in package.json
+Add the following to the scripts section in package.json:
 
-From
-
-...
- "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
-...
-To
-
-...
+```
   "scripts": {
-    "server": "node ./src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:server": "node ./src/server.js"
   }
-'''
+```
+
 Now we can start the server by running:
 
-npm run server
-It is also helpful to use nodemon so that the server will restart every time a file changes. Install it with
+```
+yarn start:server
+```
 
-npm install --save-dev nodemon
-Once again change the scripts section in package.json
+It is also helpful to use nodemon so that the server will restart every time a file changes. 
+Install it with:
+
+```
+yarn add -dev nodemon
+```
+
+Add we can add a command to the scripts section in package.json
 
 From
 
-...
+```
  "scripts": {
-    "server": "node ./src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:server": "node ./src/server.js"
+    "server": "node ./src/server.js"
   }
-...
-To
+```
 
-...
-  "scripts": {
-    "dev": "nodemon ./src/server.js",
-    "server": "node ./src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
-'''
-Now start the server with
+Now start watching the server:
 
-npm run dev
-It should restart when ever you change a file.
+```
+yarn watch:server
+```
 
-If you want the latest version of this, please commit and checkout 02-configure-express-solution
+It should restart whenever you change a file.
 
-git commit -a -m 'package config'
-git checkout 02-configure-express-solution
+
+### Struggling? No probs! Do this:
+```
+git checkout 02-setting-up-node-server
+```
