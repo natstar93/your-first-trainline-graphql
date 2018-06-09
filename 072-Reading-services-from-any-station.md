@@ -83,8 +83,12 @@ Run the query, what do you get?
 
 Exercise 1: Can you fix the issue where all the departing services appear to come from Waterloo? 💯 
 
-**Exercise 2: The final challenge**
+**Exercise 2: The final challenge 🥇**
 
 Our api only returns Station codes, can you make it return real station names?
 
 Use the provided file: `stations.json`
+
+#### Struggling?
+
+No problem! Here is the final solution `072-fetching-any-service`
