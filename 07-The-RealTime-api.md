@@ -1,9 +1,10 @@
 Our next challenge is to use a REST endpoint from within the GrpahQL server. 
 In other words, we will create a GraphQL endpoint that uses data from a REST server. That is the beauty of Graphql we can combine data from different sources and combine it one schema that we can query from.
-We will be using our RealTime API, it is a REST service that returns that of departing services and details for each service.
+We will be using our RealTime API, it is a REST service that returns departing services from a given origin and details for each service.
 I'm sure some of you may be familiar already with it.
 
 As an example when you query the following endpoint: `https://realtime.thetrainline.com/departures/wat`, you'll get the response like the following (like any other rest api, the developers haven't provided a swagger spec with the documentation 😢)
+(WAT is a station code for Waterloo)
 
 ```
 {
