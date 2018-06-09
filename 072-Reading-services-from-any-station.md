@@ -3,7 +3,7 @@ You may wonder:
 
 > What if my closest station is not Waterloo? How can I change the GraphQL api so that I can provide a parameter with the origin station that fits better my commuting?
 
-That was my thought when I was doing the Trainline tech test, I needed to now about Euston station.
+That was my thought when I was doing the Trainline tech test, I needed to know about Euston station.
 Let's improve our api so that it takes an input parameter with the desired station.
 
 First we need to modify our resolver definition so it reads the parameter:
