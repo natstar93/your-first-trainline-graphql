@@ -7,93 +7,58 @@ As an example when you query the following endpoint: `https://realtime.thetrainl
 
 ```
 {
-"queryEarlierServices":
-"https://realtime.thetrainline.com/Departures/WAT?Date=2018-06-09&Time=10:57&ExpectedWindow=-74&DesiredNumberOfServices=50",
-"queryLaterServices":
-"https://realtime.thetrainline.com/Departures/WAT?Date=2018-06-09&Time=12:13&DesiredNumberOfServices=50",
-"realTimeDataSourceAvailable":
-true,
-"requestId":
-"GjyTYgkyqUWMh+qAgkUdpg",
-"services":
-[
-{
-"callingPatternUrl":
-"https://realtime.thetrainline.com/callingPattern/W10280/2018-06-09",
-"callingType":
-"PickUp",
-"destinationList":
-[
-{
-"crs":
-"DKG"
+   "queryEarlierServices":"https://realtime.thetrainline.com/Departures/WAT?Date=2018-06-09&Time=10:57&ExpectedWindow=-74&DesiredNumberOfServices=50",
+   "queryLaterServices":"https://realtime.thetrainline.com/Departures/WAT?Date=2018-06-09&Time=12:13&DesiredNumberOfServices=50",
+   "realTimeDataSourceAvailable":true,
+   "requestId":"GjyTYgkyqUWMh+qAgkUdpg",
+   "services":[
+      {
+         "callingPatternUrl":"https://realtime.thetrainline.com/callingPattern/W10280/2018-06-09",
+         "callingType":"PickUp",
+         "destinationList":[
+            {
+               "crs":"DKG"
+            }
+         ],
+         "realTimeUpdatesInfo":{
+            "realTimeServiceInfo":{
+               "realTime":"0001-01-01T00:00:00+00:00",
+               "realTimeFlag":"Delayed"
+            }
+         },
+         "scheduledInfo":{
+            "scheduledPlatform":"1",
+            "scheduledTime":"2018-06-09T10:54:00+01:00"
+         },
+         "serviceIdentifier":"W10280",
+         "serviceOperator":"SW",
+         "transportMode":"TRAIN"
+      },
+      {
+         "callingPatternUrl":"https://realtime.thetrainline.com/callingPattern/Q02987/2018-06-09",
+         "callingType":"PickUp",
+         "destinationList":[
+            {
+               "crs":"RMD"
+            }
+         ],
+         "realTimeUpdatesInfo":{
+            "realTimeServiceInfo":{
+               "realTime":"2018-06-09T11:00:00+01:00",
+               "realTimeFlag":"Estimate",
+               "realTimePlatform":"16"
+            }
+         },
+         "scheduledInfo":{
+            "scheduledPlatform":"16",
+            "scheduledTime":"2018-06-09T11:00:00+01:00"
+         },
+         "serviceIdentifier":"Q02987",
+         "serviceOperator":"SW",
+         "transportMode":"TRAIN"
+      }
+   ]
 }
-],
-"realTimeUpdatesInfo":
-{
-"realTimeServiceInfo":
-{
-"realTime":
-"0001-01-01T00:00:00+00:00",
-"realTimeFlag":
-"Delayed"
-}
-},
-"scheduledInfo":
-{
-"scheduledPlatform":
-"1",
-"scheduledTime":
-"2018-06-09T10:54:00+01:00"
-},
-"serviceIdentifier":
-"W10280",
-"serviceOperator":
-"SW",
-"transportMode":
-"TRAIN"
-},
-{
-"callingPatternUrl":
-"https://realtime.thetrainline.com/callingPattern/Q02987/2018-06-09",
-"callingType":
-"PickUp",
-"destinationList":
-[
-{
-"crs":
-"RMD"
-}
-],
-"realTimeUpdatesInfo":
-{
-"realTimeServiceInfo":
-{
-"realTime":
-"2018-06-09T11:00:00+01:00",
-"realTimeFlag":
-"Estimate",
-"realTimePlatform":
-"16"
-}
-},
-"scheduledInfo":
-{
-"scheduledPlatform":
-"16",
-"scheduledTime":
-"2018-06-09T11:00:00+01:00"
-},
-"serviceIdentifier":
-"Q02987",
-"serviceOperator":
-"SW",
-"transportMode":
-"TRAIN"
-},
-...
-...
-...
 ```
 
 Let's use this to build our graphql server.
