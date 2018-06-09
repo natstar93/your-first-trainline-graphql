@@ -46,6 +46,8 @@ Can you map through all the services and return all origin/destinations through 
 #### Exercise 2:
 Can you include the operator of each service?
 
+Use graphiQL to see the result after the exercises.
+
 #### Struggling?
 
 To the get the solution checkout 071-fetching-real-time-services-solution
