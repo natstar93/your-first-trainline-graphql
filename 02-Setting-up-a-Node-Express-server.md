@@ -45,7 +45,7 @@ You should see:
 Express status: OK
 ```
 
-##Making life easier
+## Making life easier
 
 Add the following to the scripts section in package.json:
 
@@ -68,9 +68,7 @@ Install it with:
 yarn add -dev nodemon
 ```
 
-Add we can add a command to the scripts section in package.json
-
-From
+Add we can add a command to the scripts section in package.json:
 
 ```
  "scripts": {
