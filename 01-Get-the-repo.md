@@ -1,5 +1,5 @@
-Clone the following repo: git@github.com:javflores/your-trainline-graphql-server.git
-After cloning the repo, switch to '01-start'
+Clone the following repo: `git@github.com:javflores/your-trainline-graphql-server.git`
+After cloning the repo, switch to `01-start`
 
 To achieve this, open your terminal\shell and navigate to a directory where you want to place the repo. Then use:
 
@@ -7,6 +7,7 @@ To achieve this, open your terminal\shell and navigate to a directory where you 
 git clone git@github.com:javflores/your-trainline-graphql-server.git
 cd your-trainline-graphql-server
 git checkout 01-start
+```
 
 ## Verification
 
