@@ -1,10 +1,10 @@
 Great work so far!
 You may wonder: 
 
-> What if my closest station I not Waterloo? How can I change the GraphQL api so that I can provide a parameter with the origin station that fits better my commuting?
+> What if my closest station is not Waterloo? How can I change the GraphQL api so that I can provide a parameter with the origin station that fits better my commuting?
 
 That was my thought when I was doing the Trainline tech test, I needed to now about Euston station.
-Let's improve our api so that it takes an input parameter with the desired destination.
+Let's improve our api so that it takes an input parameter with the desired station.
 
 First we need to modify our resolver definition so it reads the parameter:
 
@@ -17,7 +17,7 @@ const resolvers = {
 };
 ```
 
-Any Apollo Graphql is given root and args. Args contains the query parameters.
+Any Apollo Graphql resolver is given root and args. Args contains the query parameters.
 
 Then in the resolver function:
 ```
