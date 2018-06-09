@@ -26,6 +26,7 @@ In the left column we write our query:
 {
   status
 }
+```
 
 You might notice the type assistance when you hit Ctrl+Space.
 
