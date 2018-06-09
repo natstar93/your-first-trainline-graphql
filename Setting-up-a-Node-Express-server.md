@@ -45,7 +45,7 @@ You should see:
 Express status: OK
 ```
 
-## Making life easier
+##Making life easier
 
 Add the following to the scripts section in package.json:
 
@@ -75,7 +75,7 @@ From
 ```
  "scripts": {
     "start:server": "node ./src/server.js"
-    "server": "node ./src/server.js"
+    "watch:server": "nodemon ./src/server.js"
   }
 ```
 
