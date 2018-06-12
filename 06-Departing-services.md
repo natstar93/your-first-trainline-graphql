@@ -50,8 +50,8 @@ Remember, a resolver is just a function that returns the given objects.
 
 _Hint: look at the status resolver._
 
-#### Exercise 6.2. 
-Can you refactor your new resolver into a separate module: `graphql/departing-services-resolver.js`?
+#### Exercise 6.2. Optional
+Refactor your new resolver into a separate module: `graphql/departing-services-resolver.js`.
 
 #### Checkpoint
 
