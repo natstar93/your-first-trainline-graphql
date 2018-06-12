@@ -12,7 +12,7 @@ type DepartingService {
 Let's replace the barcoded data in the resolver by using the real api.
 We need some kind of http request package. I like superagent, but you can use axios or any other that you like.
 
-Write the following code in your resolver, it returns the first service:
+Write the following code in your resolver, it returns the first service (this is assuming that you have refactored your resolver into a separate module, if you haven't you can use the same function in your main GraphQL file)
 
 ```
 const client = require('superagent');
