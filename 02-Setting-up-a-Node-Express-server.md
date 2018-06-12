@@ -16,7 +16,7 @@ We need to install express:
 yarn add express
 ```
 
-Add the following to `/src/sever.js` to configure an express app.
+Add the following to `/src/server.js` to configure an express app.
 
 ```
 const express = require('express');
