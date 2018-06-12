@@ -18,6 +18,9 @@ We need to install the following packages:
 yarn add graphql apollo-server-express graphql-tools body-parser
 ```
 
+//NOTE: Body-parser parses incoming request bodies in a middleware before your handlers.
+
+
 Once those packages are installed, add the following to ./src/server.js:
 ```
 const bodyParser = require('body-parser');
@@ -89,6 +92,8 @@ Reason is that all the request to graphQL use POSTs methods under the hood.
 You can use Postman or Curl:
 
 1. Configure postman to do a POST to http://localhost:3000/graphql
+(GraphQL docs state that it should be able to handle GET operations as well)
+(https://github.com/apollographql/apollo-link/tree/master/packages/apollo-link-http)
 
 2. Under the body tab, choose raw and JSON (application/json)
 
