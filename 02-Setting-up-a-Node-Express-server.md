@@ -72,7 +72,7 @@ Add we can add a command to the scripts section in package.json:
 
 ```
  "scripts": {
-    "start:server": "node ./src/server.js"
+    "start:server": "node ./src/server.js",
     "watch:server": "nodemon ./src/server.js"
   }
 ```
