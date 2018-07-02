@@ -1,8 +1,8 @@
-Clone the following repo: `https://github.com/javflores/your-trainline-graphql-server.git`
+Clone the following repo: `https://github.com/javflores/your-trainline-graphql.git`
 
 ## Verification
 
-At this point the graphql-with-tdd folder should only contain a .gitignore file and the .git folder.
+At this point the `your-first-trainline-graphql` folder should only contain a .gitignore file and the .git folder.
 
 ```
 $ ls -al
