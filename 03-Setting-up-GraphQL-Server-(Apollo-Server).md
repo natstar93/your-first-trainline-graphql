@@ -21,7 +21,7 @@ yarn add graphql apollo-server-express graphql-tools body-parser
 //NOTE: Body-parser parses incoming request bodies in a middleware before your handlers.
 
 
-Once those packages are installed, add the following to ./src/server.js:
+Once those packages are installed, add the following to ./server/index.js:
 ```
 const bodyParser = require('body-parser');
 const { graphqlExpress } = require('apollo-server-express');
@@ -39,7 +39,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { graphqlExpress } = require('apollo-server-express');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 9000;
 const app = express();
 
 app.get('/status', (req, res) => res.send('Express status: OK'));
@@ -56,7 +56,7 @@ The Apollo Server will handle all POST requests to /graphql.
 We can't use this endpoint yet as we are missing a schema - which is needed by any GraphQL server.
 
 Let's create a minimal simple schema to manually test the GraphQL setup. 
-In ./src/server.js let's create the types:
+In ./server/index.js let's create the types:
 ```
 const typeDefs = `
   type Query {
@@ -87,11 +87,12 @@ const graphQLSchema =  makeExecutableSchema({
 ### Verification
 
 Let's test this to see if it works. 
-If you hit `http://localhost:3000/graphql` in your browser you get an error.
+If you hit `http://localhost:9000/graphql` in your browser you get an error, query missing.
+
 Reason is that all the request to graphQL use POSTs methods under the hood.
 You can use Postman or Curl:
 
-1. Configure postman to do a POST to http://localhost:3000/graphql
+1. Configure postman to do a POST to http://localhost:9000/graphql
 (GraphQL docs state that it should be able to handle GET operations as well)
 (https://github.com/apollographql/apollo-link/tree/master/packages/apollo-link-http)
 
@@ -119,7 +120,7 @@ If you want to use Curl:
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"query":"query { status }"}' \
-  http://localhost:3000/graphql
+  http://localhost:9000/graphql
 ```
 
 #### What have I done?
