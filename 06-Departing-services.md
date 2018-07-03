@@ -1,5 +1,5 @@
 Let's start creating the real Trainline GraphQL api.
-In this section we are going to extend the schema to include a custom type - which we will call DepartingService. It will have an origin and destination. To achieve this modify the typeDefs value (graphic/index.js):
+In this section we are going to extend the schema to include a custom type - which we will call DepartingService. It will have an origin and destination. To achieve this modify the typeDefs value (graphql/index.js):
 
 ```
 const typeDefs = `
@@ -49,9 +49,6 @@ Can you create the resolver for the departingServices? For now return two harcod
 Remember, a resolver is just a function that returns the given objects.
 
 _Hint: look at the status resolver._
-
-#### Exercise 6.2. Optional
-Refactor your new resolver into a separate module: `graphql/departing-services-resolver.js`.
 
 #### Checkpoint
 
