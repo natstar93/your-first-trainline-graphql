@@ -1,14 +1,6 @@
 We are going to build our GraphQL server on top of Express.js, therefore we will start by getting a basic Express server up and running.
 
-We first need to initialise a node project:
-
-```
-$ npm init -y
-```
-
-This will create the `./package.json` file.
-
-Next create a new folder called `src` and add an empty file within it called `server.js`.
+Let's create a new folder called `server` and add an empty file within it called `index.js`.
 
 We need to install express:
 
@@ -16,7 +8,7 @@ We need to install express:
 yarn add express
 ```
 
-Add the following to `/src/server.js` to configure an express app.
+Add the following to `/server/index.js` to configure an express app.
 
 ```
 const express = require('express');
@@ -32,7 +24,7 @@ app.listen(PORT);
 To test this run:
 
 ```
-node ./src/server.js
+node ./server/index.js
 ```
 
 Open a browser and go to: 
@@ -51,7 +43,7 @@ Add the following to the scripts section in package.json:
 
 ```
   "scripts": {
-    "start:server": "node ./src/server.js"
+    "start:server": "node ./server/index.js"
   }
 ```
 
@@ -65,15 +57,15 @@ It is also helpful to use nodemon so that the server will restart every time a f
 Install it with:
 
 ```
-yarn add -dev nodemon
+yarn add --dev nodemon
 ```
 
 Add we can add a command to the scripts section in package.json:
 
 ```
  "scripts": {
-    "start:server": "node ./src/server.js",
-    "watch:server": "nodemon ./src/server.js"
+    "start:server": "node ./server/index.js",
+    "watch:server": "nodemon ./server/index.js"
   }
 ```
 
