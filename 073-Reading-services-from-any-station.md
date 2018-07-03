@@ -3,58 +3,44 @@ You may wonder:
 
 > What if my closest station is not Waterloo? How can I change the GraphQL api so that I can provide a parameter with the origin station that fits better my commuting?
 
-That was my thought when I was doing the Trainline tech test, I needed to know about Euston station.
-Let's improve our api so that it takes an input parameter with the desired station.
+Let's extend our api so that it takes an input parameter with the desired station.
 
-First we need to modify our resolver definition so it reads the parameter:
+First we need to modify our resolver departing service resolver definition so it reads the parameter:
 
 ```
 const resolvers = {
   Query: {
     status: () => "GraphQL status: OK",
-    departingServices: : (root, args) => departingServicesResolver(root, args)
+    departingServices: : (root, args) => departingServicesResolver(args)
   }
 };
 ```
 
 Any Apollo Graphql resolver is given root and args. Args contains the query parameters.
 
-Then in the resolver function:
+Then in the resolver function we destruct the origin:
 ```
-const client = require('superagent');
-
-const getDepartingServicesResolver = async (root, {origin = "WAT"}) => {
+const getDepartingServicesResolver = async ({origin = "WAT"}) => {
   const departuresEndpoint = `https://realtime.thetrainline.com/departures/${origin}`;
   const response = await client.get(departuresEndpoint);
   
   return response.body.services.map((service) => {
     return {
-      origin: 'WAT',
+      origin,
       destination: readDestination(service),
       operator: service.serviceOperator
     };
   });
 };
 
-function readDestination(service){
-  return service.destinationList[0].crs;
-}
-
-module.exports = getDepartingServicesResolver;
 ```
 
-And finally we need to change the code in the query:
+And finally we need to change the code in the query so that it takes the origin input parameter:
 ```
-const typeDefs = `
-  type DepartingService {
-    origin: String
-    destination: String
-    operator: String
-  }
-  
+const queryDefinitions = `
   type Query {
-    status: String
     departingServices(origin: String): [DepartingService]
+    status: String
   }
 `;
 ```
