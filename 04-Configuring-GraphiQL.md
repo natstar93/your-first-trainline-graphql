@@ -8,7 +8,7 @@ This is the GraphiQL documentation for the Github graphic api: https://developer
 In this section we are going to add Graphiql to our tramline api.
 To use GraphiQL within Apollo Server we need use `graphiqlExpress` from `apollo-server-express` and configure it as middleware.
 
-Add the following to your `server.js`:
+Add the following to your `index.js`:
 
 ```
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
