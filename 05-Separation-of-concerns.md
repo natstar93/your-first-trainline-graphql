@@ -1,6 +1,6 @@
 Let's refactor all the GraphQL side of things into Express middleware:
 
-- Create a new folder called Graphql and inside a file called index `.src/graphql/index.js`.
+- Create a new folder called Graphql and inside a file called index `server/graphql/index.js`.
 - Move all the graphQL specifics (apart from the Graphical docs) to that file and refactor in the shape of a middleware file:
 ```
 const express = require('express');
