@@ -56,6 +56,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { graphqlExpress } = require('apollo-server-express');
 const { makeExecutableSchema } = require('graphql-tools');
+const { merge } = require('lodash');
 
 const { departingServicesTypes, departingServicesResolvers } = require('./departing-services');
 
@@ -73,7 +74,7 @@ const statusResolver = {
     status: () => "GraphQL status: OK",
   }
 };
-const resolvers = {...statusResolver, ...departingServicesResolvers};
+const resolvers = merge(statusResolver, departingServicesResolvers);
 
 const graphQLSchema =  makeExecutableSchema({
   typeDefs: [
@@ -88,6 +89,7 @@ router.post('/', bodyParser.json(), graphqlExpress({ schema: graphQLSchema }));
 module.exports = router;
 ```
 
+Yes... we use lodash so we can combine both resolvers into one object key called Query...
 #### Struggling?
 
 No problem! Here is the final solution `072-refactor-type`
