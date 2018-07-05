@@ -18,7 +18,7 @@ We need to install the following packages:
 yarn add graphql apollo-server-express graphql-tools body-parser
 ```
 
-//NOTE: Body-parser parses incoming request bodies in a middleware before your handlers.
+_NOTE: Body-parser parses incoming request bodies in a middleware before your handlers._
 
 
 Once those packages are installed, add the following to ./server/index.js:
