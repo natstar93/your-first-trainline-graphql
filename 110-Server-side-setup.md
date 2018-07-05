@@ -99,10 +99,10 @@ const departingServicesResolvers = {
 };
 ```
 A Subscription resolver is very similar to a query resolver except that it doesn't return the result straight away but an iterator that will get the value back eventually.
-In this case we have define a subscription to notify clients that services have changed so that they can query more data if needed.
+In this case we have defined a subscription to notify clients that services have changed so that they can query more data if needed.
 
-To simplify, in this scenario we are going a simulate in the server side with a data change.
-In `/graphql/departing-services/index.js` let write for now the following code at the end of the file:
+To simplify, in this scenario we are going to simulate data changes in the server side.
+In `/graphql/departing-services/index.js` let's write for now the following code at the end of the file:
 ```
 setInterval(async function(){
   const payload = {
@@ -116,7 +116,7 @@ Every 10 seconds we are simulating a data change, we query the api with services
 
 ### Struggling
 
-First of, don't worry, this is quite new and the api is not 100% polish in my opinion.
+First of, don't worry, this is quite new and the interface within Apollo to use these things is not 100% polish in my opinion.
 You can run the following to get unstacked.
 
 `git checkout 110-server-side-setup`
