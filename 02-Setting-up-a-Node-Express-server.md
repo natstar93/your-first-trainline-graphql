@@ -23,7 +23,7 @@ app.listen(PORT);
 
 ## Verification
 
-To test this run:
+To test this, run the following:
 
 ```
 node ./server/index.js
@@ -62,7 +62,7 @@ Install it with:
 yarn add --dev nodemon
 ```
 
-Add we can add a command to the scripts section in package.json:
+To use it add this other command to the scripts section in package.json:
 
 ```
  "scripts": {
