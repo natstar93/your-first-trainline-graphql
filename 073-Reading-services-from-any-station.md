@@ -11,7 +11,7 @@ First we need to modify our resolver departing service resolver definition so it
 const resolvers = {
   Query: {
     status: () => "GraphQL status: OK",
-    departingServices: : (root, args) => departingServicesResolver(args) //we pass around the args from the query
+    departingServices: : (root, args) => getDepartingServicesResolver(args) //we pass around the args from the query
   }
 };
 ```
