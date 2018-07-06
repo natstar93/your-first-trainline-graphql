@@ -68,6 +68,8 @@ Fewwww, that is it! It was a lot of work, but...
 If you have your client side and your server side running, all the changes would have been taken as we went along. Navigate to the live departures page in the browser and... Voila!
 There you have your UI with fresh new services every 10 seconds. It is not the client that is spamming the server with requests every now and then, it is the server pushing new data to the client.
 
+Thanks for taking the time to come to this workshop. I really hope you enjoyed it and that you liked this amazing technology.
+I hope that after this you are at least as passionate as me about GraphQL.
 
 #### Didn't get this far?
 
