@@ -19,7 +19,7 @@ app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
 ### Verification:
 
-To test this, open your browser and go to: `http://localhost:3000/graphiql`
+To test this, open your browser and go to: `http://localhost:9000/graphiql`
 
 
 In the left column we write our query:
