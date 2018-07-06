@@ -1,7 +1,8 @@
 One of the key benefits of GraphQL is the tooling. 
 One of the best ones is GraphiQL.
-In Rest apis there are tools like Swagger or RAML to document APIs but it is something that you have to add.
-In Graphql we have the schema that documents the api, so GraphiQL uses the schema to create a graphical interactive IDE where not only you can learn the API but also you can test the retrieval of the data before consuming it.
+In Rest apis there are tools like Swagger or RAML to document APIs but it is something that doesn't come _out off the box_.
+
+Since in Graphql there is the schema that documents the api, GraphiQL uses it to create a graphical interactive IDE where not only you can learn the API but also you can test the retrieval of the data before consuming it.
 This is the GraphiQL documentation for the Github graphic api: https://developer.github.com/v4/explorer/
 
 
@@ -10,7 +11,7 @@ To use GraphiQL within Apollo Server we need use `graphiqlExpress` from `apollo-
 
 Add the following to your `index.js`:
 
-```
+```js
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
 
 app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
@@ -22,7 +23,7 @@ To test this, open your browser and go to: `http://localhost:3000/graphiql`
 
 
 In the left column we write our query:
-```
+```json
 {
   status
 }
