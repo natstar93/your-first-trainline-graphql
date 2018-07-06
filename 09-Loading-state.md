@@ -3,12 +3,12 @@ In real life scenarios we show a _loading_ screen while the data is being obtain
 
 Depending on the framework sometimes this is not trivial at all. Apollo makes this extremely easy, let's see how.
 
-#### Loading page markup
+### _Loading_ React component
 
-Go to your src folder and create a new file: `src/loading/index.js`.
+Go to your `src` folder and create a new folder `loading` and inside a new file: `src/loading/index.js`.
 Copy and paste the following code:
 
-```
+```js
 import React from 'react';
 
 import './index.css';
@@ -24,7 +24,7 @@ export default Spinner;
 
 Also let's create an `index.css` in the same folder with the following:
 
-```
+```js
 .loading-wrapper {
     position: fixed;
     top: 50%;
@@ -46,11 +46,13 @@ Also let's create an `index.css` in the same folder with the following:
 }
 ```
 
-#### Reading loading state
+This is a very basic implementation of a spinner, but it does the job.
+
+### Rendering the loading state
 
 Let's change our container like this:
 
-```
+```js
 import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -91,11 +93,12 @@ export default graphql(getDepartingServicesFrom, {
 })(DepartingServicesContainer);
 ```
 
-I have defined a constant for now with the origin.
 When reading the data that comes from the server, Apollo give us the result (behind the name of the query) and a loading value. It will be true whilst the server hasn't the data yet.
 If the data is still loading, we render the Spinner. As soon as loading is false, we pass the query result to DepartingServices.
 
-#### Struggling
+I have defined a constant for now with the origin.
+
+### Struggling
 
 No worries! Checkout to the following branch and we'll get you sorted:
 `git checkout 09-loading-state`
