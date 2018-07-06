@@ -22,7 +22,7 @@ _NOTE: Body-parser parses incoming request bodies in a middleware before your ha
 
 
 Once those packages are installed, add the following to ./server/index.js:
-```
+``` js
 const bodyParser = require('body-parser');
 const { graphqlExpress } = require('apollo-server-express');
 
@@ -34,7 +34,7 @@ app.use('/graphql', bodyParser.json(), graphqlExpress({ schema: graphQLSchema })
 ```
 
 The whole file looks like this for now:
-```
+``` js
 const express = require('express');
 const bodyParser = require('body-parser');
 const { graphqlExpress } = require('apollo-server-express');
@@ -57,7 +57,7 @@ We can't use this endpoint yet as we are missing a schema - which is needed by a
 
 Let's create a minimal simple schema to manually test the GraphQL setup. 
 In ./server/index.js let's create the types:
-```
+```js
 const typeDefs = `
   type Query {
     status: String    
@@ -66,7 +66,7 @@ const typeDefs = `
 ```
 
 And the resolvers:
-```
+``` js
 const resolvers = {
   Query: {
     status: () => "GraphQL status: OK"
@@ -76,8 +76,9 @@ const resolvers = {
 
 Finally we put it all together in our Schema:
 
-```
+``` js
 const { makeExecutableSchema } = require('graphql-tools'); //in the requires section
+
 const graphQLSchema =  makeExecutableSchema({
   typeDefs,
   resolvers,
@@ -100,14 +101,14 @@ You can use Postman or Curl:
 
 3. Within the body text box enter the following JSON:
 
-```
+``` json
 {
 	"query": "query  { status }"
 }
 ```
 
 4. Click Send, and scroll down to the bottom to see the response, which should look like this:
-```
+``` json
 {
     "data": {
         "status": "GraphQL status: OK"
@@ -116,14 +117,14 @@ You can use Postman or Curl:
 ```
 
 If you want to use Curl:
-```
+``` curl
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"query":"query { status }"}' \
   http://localhost:9000/graphql
 ```
 
-#### What have I done?
+### What have I done?
 
 In this section we configured a GraphQL server using Apollo server. 
 GraphQL is typed and it uses a schema with types, that is, things you can query.
