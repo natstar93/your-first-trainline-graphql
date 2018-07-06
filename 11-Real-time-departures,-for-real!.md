@@ -1,4 +1,5 @@
-This is quite new in the GraphQL world, proper edge. 
+This is quite new in the GraphQL world, proper edge-hipster developer.
+
 In GraphQL you have Queries and Mutations. We've being focusing on queries today.
 Around the end of 2017 Graphql came with a third type of operation: Subscriptions. I've been exploring that recently and I'd like to show you in this workshop.
 
