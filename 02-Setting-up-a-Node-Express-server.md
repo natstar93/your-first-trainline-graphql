@@ -4,13 +4,13 @@ Let's create a new folder called `server` and add an empty file within it called
 
 We need to install express:
 
-```
+```ssh
 yarn add express
 ```
 
 Add the following to `/server/index.js` to configure an express app.
 
-```
+``` js
 const express = require('express');
 const PORT = process.env.PORT || 9000;
 const app = express();
@@ -25,12 +25,12 @@ app.listen(PORT);
 
 To test this, run the following:
 
-```
+``` ssh
 node ./server/index.js
 ```
 
 Open a browser and go to: 
-```
+``` ssh
 http://localhost:3000/status
 ```
 
@@ -43,7 +43,7 @@ Express status: OK
 
 Add the following to the scripts section in package.json:
 
-```
+``` json
   "scripts": {
     "start:server": "node ./server/index.js"
   }
@@ -51,20 +51,20 @@ Add the following to the scripts section in package.json:
 
 Now we can start the server by running:
 
-```
+``` ssh
 yarn start:server
 ```
 
 It is also helpful to use nodemon so that the server will restart every time a file changes. 
 Install it with:
 
-```
+``` ssh
 yarn add --dev nodemon
 ```
 
 To use it add this other command to the scripts section in package.json:
 
-```
+``` json
  "scripts": {
     "start:server": "node ./server/index.js",
     "watch:server": "nodemon ./server/index.js"
@@ -73,7 +73,7 @@ To use it add this other command to the scripts section in package.json:
 
 Now start watching the server:
 
-```
+``` ssh
 yarn watch:server
 ```
 
