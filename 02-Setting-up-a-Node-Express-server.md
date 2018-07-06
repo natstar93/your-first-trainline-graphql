@@ -31,7 +31,7 @@ node ./server/index.js
 
 Open a browser and go to: 
 ``` ssh
-http://localhost:3000/status
+http://localhost:9000/status
 ```
 
 You should see:
