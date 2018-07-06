@@ -24,7 +24,7 @@ export default Spinner;
 
 Also let's create an `index.css` in the same folder with the following:
 
-```js
+```css
 .loading-wrapper {
     position: fixed;
     top: 50%;
