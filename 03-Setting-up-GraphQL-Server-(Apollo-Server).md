@@ -29,7 +29,7 @@ const { graphqlExpress } = require('apollo-server-express');
 //...//
 
 const graphQLSchema = // todo
-app.use('/graphql', bodyParser.json(), graphqlExpress({ schema: graphQLSchema }))
+app.use('/graphql', bodyParser.json(), graphqlExpress({ schema: graphQLSchema }));
 
 ```
 
