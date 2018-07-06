@@ -72,7 +72,7 @@ There you have your UI with fresh new services every 10 seconds. It is not the c
 Thanks for taking the time to come to this workshop. I really hope you enjoyed it and that you liked this amazing technology.
 I hope that after this you are at least as passionate as me about GraphQL.
 
-### Didn't get this far?
+### Did not get this far?
 
 No worries! You have this repo and wiki for you to use and go through it when you have time.
 If you want to see the whole solution, use this:
