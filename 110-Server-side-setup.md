@@ -5,7 +5,7 @@ First of we need to configure our server to be able to send subscriptions.
 
 2. We'll keep our http endpoint for queries but we need to wrap the server with an extra transport layer with Websocket. In `server/index.js` add the following:
 
-```
+```js
 const { execute, subscribe } = require('graphql');
 const { createServer } = require('http');
 const { SubscriptionServer } = require('subscriptions-transport-ws');
@@ -34,9 +34,9 @@ webSocket.listen(PORT, () => {
 }); 
 ```
 
-3. We will use graphql-subscriptions to pass around a pubsub that we can use to trigger retrieval of new data.
+3. We will use `graphql-subscriptions` to pass around a pubsub that we can use to trigger retrieval of new data.
 Add a new file `graphql/pub-sub.js`:
-```
+```js
 const { PubSub } = require('graphql-subscriptions');
 const pubsub = new PubSub();
  
@@ -44,15 +44,16 @@ module.exports = pubsub;
 ```
 
 4. In `graphql/index.js` we need to define the subscription type and add the subscription resolver:
-```
+```js
 const subscriptionDefinitions = `
   type Subscription {
     servicesChanged(origin: String): [DepartingService]
   }
 `;
 ```
+
 We add that definition to the schema:
-```
+```js
 const graphQLSchema =  makeExecutableSchema({
   typeDefs: [
     queryDefinitions,
@@ -63,9 +64,9 @@ const graphQLSchema =  makeExecutableSchema({
 });
 ```
 
-As you saw in the previous step we are exposing the schema and we have renamed route to graphql. Let's do that now:
+As you saw in the previous step we are exposing the schema and we have also renamed `route` to `graphql`. Let's do that now:
 
-```
+```js
 const graphql = express.Router();
 //...//
 graphql.post('/', bodyParser.json(), graphqlExpress({ schema: graphQLSchema }));
@@ -78,13 +79,14 @@ module.exports = {
 
 5. `./graphql/departing-services/index.js` we have to define the resolver por our subscription.
 First we import the pubsub client:
-```
+
+```js
 const pubsub = require('../../graphql/pub-sub');
 
 ```
 
 Then we implement the resolver:
-```
+```js
 const departingServicesResolvers = {
   Query: {
     departingServices: (root, args) => {
@@ -98,12 +100,13 @@ const departingServicesResolvers = {
   }
 };
 ```
-A Subscription resolver is very similar to a query resolver except that it doesn't return the result straight away but an iterator that will get the value back eventually.
+
+A Subscription resolver is very similar to the query resolvers that we've been using before. The difference is that it doesn't return the result straight away but an iterator that will get the value back eventually.
 In this case we have defined a subscription to notify clients that services have changed so that they can query more data if needed.
 
 To simplify, in this scenario we are going to simulate data changes in the server side.
 In `/graphql/departing-services/index.js` let's write for now the following code at the end of the file:
-```
+```js
 setInterval(async function(){
   const payload = {
     servicesChanged: await getDepartingServicesResolver("WAT")
