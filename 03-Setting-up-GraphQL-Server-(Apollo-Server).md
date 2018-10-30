@@ -15,7 +15,7 @@ https://github.com/apollographql/apollo-server#comparison-with-express-graphql
 We need to install the following packages:
 
 ```
-yarn add graphql apollo-server-express graphql-tools body-parser
+yarn add graphql apollo-server-express@^1.3.6 graphql-tools body-parser
 ```
 
 _NOTE: Body-parser parses incoming request bodies in a middleware before your handlers._
